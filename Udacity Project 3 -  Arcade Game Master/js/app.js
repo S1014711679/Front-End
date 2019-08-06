@@ -38,11 +38,13 @@ Enemy.prototype.update = function(dt) {
 
 //Check the collsion between enemies and player, then set the player to original location
 Enemy.prototype.checkCollision = function() {
-    if (Math.abs(this.x - player.x) <= 50 && Math.abs(this.y - player.y) <= 10) {
+    if (player.x < this.x + 51 &&
+        player.x + 51 > this.x &&
+        player.y < this.y + 40 &&
+        player.y + 40 > this.y) {
         player.x = 202;
         player.y = 405;
     }
-
 };
 
 // Draw the enemy on the screen, required method for game
@@ -61,8 +63,15 @@ var Player = function(x, y) {
 };
 
 
-Player.prototype.update = function(dt) {
+Player.prototype.update = function() {
 
+    //if the player get into water-block for 3s, reset the player to the initial location
+    if (this.y <= 10) {
+        setTimeout(() => {
+            this.x = 202;
+            this.y = 405;
+        }, 3000);
+    }
 };
 
 Player.prototype.render = function() {
@@ -88,13 +97,6 @@ Player.prototype.handleInput = function(key) {
         this.y = this.y + 83;
     }
 
-    //if the player get into water-block for 3s, reset the player to the initial location
-    setTimeout(() => {
-        if (this.y <= -10) {
-            player.x = 202;
-            player.y = 405;
-        }
-    }, 3000);
 };
 
 /** Player  - Scope and Movements
@@ -112,15 +114,16 @@ const player = new Player(202, 405); //create player: location (200,300)
  *  move vertically : 83
  *  move horizontally: based on speed
  */
-const allEnemies = []; // to store all the enmies in array
-const enemyLocations = [63, 146, 229]; // set the start y axis location
+/** create enemies and push to the allEnemies array 
+ *  and add to the canvas [63, 146, 229]
+ *  set the start y axis location*/
 
-//create enemies and push to the allEnemies array
-//add to the canvas
-enemyLocations.forEach((y) => {
-    enemy = new Enemy(0, y, 202); // create enemy: initial location (0,y), speed
-    allEnemies.push(enemy); // add enemy to allEnemies array
-});
+const allEnemies = [
+    new Enemy(0, 63, 202),
+    new Enemy(0, 146, 202),
+    new Enemy(0, 229, 202),
+];
+
 
 
 // This listens for key presses and sends the keys to your
