@@ -17,3 +17,4 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 
 ##  Dependencies
 [app.js](https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%203%20-%20%20Arcade%20Game%20Master/js/app.js)
+[app_class.js](https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%203%20-%20%20Arcade%20Game%20Master/js/app_class.js)
