@@ -2,18 +2,13 @@
 
 ## Table of Contents
 
-- [Instructions](#instructions)
+- [Description](#Description)
 - [Contributing](#contributing)
 
-## Instructions
+## Descciption
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+The movements of the character is controlled by the arrows (up,down,left,right). The character must avoid collision with sprites from the second row to the forth row. And the character can't stay in the water-block for over 3 minutes. Otherwise, the location will be reset to the original location.
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
-
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
-
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
 ## Contributing
 
