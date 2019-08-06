@@ -16,4 +16,4 @@ The movements of the character is controlled by the arrows (up,down,left,right).
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 ##  Dependencies
-[app.js]()
+[app.js](https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%203%20-%20%20Arcade%20Game%20Master/js/app.js)
