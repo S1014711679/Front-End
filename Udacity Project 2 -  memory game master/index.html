@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Matching Game</title>
+    <meta name="description" content="">
+    <!--Responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Matching Game</h1>
+        </header>
+
+        <section class="score-panel">
+            <ul class="stars">
+                <li><i class="fa fa-star ilstar"></i></li>
+                <li><i class="fa fa-star ilstar"></i></li>
+                <li><i class="fa fa-star ilstar"></i></li>
+            </ul>
+
+            <span id="moves" style="margin-left:30px;">0</span> Moves
+
+
+            <!--display the timer-->
+            <span style="margin-left: 30px;"> Time: </span>
+            <span class="timer">0 s</span>
+
+            <!--Restart the game-->
+            <div class="restart">
+                <ul class="stars">
+                    <li><i class="fa fa-repeat"></i></li>
+                </ul>
+            </div>
+        </section>
+
+        <!--dynamically generate cards-->
+        <ul class="deck">
+
+        </ul>
+        <!-- the end of card generation -->
+    </div>
+
+    <!-- after the all the cards are matched, then show up-->
+    <div class="modal" id="myModal">
+        <div class="modal-background"></div>
+        <div class="modal-frame">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Congraduations!</p>
+                <p id="result_time"></p>
+
+                <section class="score-panel" style="text-align: center; width:100%;">
+                    <ul class="stars" id="result_stars" style="display:inline-table; width:100%; margin: 0 0;">
+                    </ul>
+                </section>
+                <p>Would you like to play again?</p>
+            </div>
+            <div class="modal-footer">
+                <table align="center">
+                    <tr>
+                        <td><button id="bt_yes">Yes</button></td>
+                        <td><button id="bt_no">No</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
