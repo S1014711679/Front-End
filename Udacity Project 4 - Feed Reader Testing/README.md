@@ -36,4 +36,4 @@ The test suits for [app.js](https://github.com/S1014711679/Front-End/blob/master
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 ##  Dependencies
-1. [Jasmine - Behavior-Driven JavaScript] (https://jasmine.github.io/)
+1. [Jasmine - Behavior-Driven JavaScript](https://jasmine.github.io/)
