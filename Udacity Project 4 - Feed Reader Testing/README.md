@@ -9,7 +9,7 @@
 ## Descciption
 This testing project is mainly based on Jasmine JavaScript library. 
 
-The test suits for app.js[] include:
+The test suits for app.js[https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%204%20-%20Feed%20Reader%20Testing/js/app.js] include:
 
 1. Test the RSS feeds definitions and the allFeeds variables:
     * The allFeeds variable has been defined.
