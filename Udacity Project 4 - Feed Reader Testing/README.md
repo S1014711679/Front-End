@@ -9,7 +9,7 @@
 ## Descciption
 This testing project is mainly based on Jasmine JavaScript library. 
 
-The test suits for app.js[https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%204%20-%20Feed%20Reader%20Testing/js/app.js] include:
+The test suits for [app.js](https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%204%20-%20Feed%20Reader%20Testing/js/app.js) include:
 
 1. Test the RSS feeds definitions and the allFeeds variables:
     * The allFeeds variable has been defined.
@@ -36,4 +36,4 @@ The test suits for app.js[https://github.com/S1014711679/Front-End/blob/master/U
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 ##  Dependencies
-1. Jasmine - Behavior-Driven JavaScript [https://jasmine.github.io/]
+1. [Jasmine - Behavior-Driven JavaScript] (https://jasmine.github.io/)
