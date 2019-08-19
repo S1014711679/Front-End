@@ -8,31 +8,28 @@
 
 ## Descciption
 This testing project is mainly based on Jasmine JavaScript library. 
-The test suits include:
-1. Test the RSS feeds definitions and the allFeeds variables
-* 
 
+The test suits for app.js[] include:
+
+1. Test the RSS feeds definitions and the allFeeds variables:
+    * The allFeeds variable has been defined.
+    * The allFeeds is not an empty array.
+    * Each feed in the allFeeds object has a URL defined and that the URL is not empty.
+    * Each feed in the allFeeds object has a name defined and that the name is not empty.
     
-5. Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty
-    * Think about how you wrote the previous test. What are you testing for this time?
-6. Write a new test suite named `"The menu"`
-    * What are you `describe`-ing in this test suite?
-7. Write a test that ensures the menu element is hidden by default
-    * You'll have to analyze the HTML and the CSS to determine how the hiding/showing of the menu element is implemented
-    * What code in `app.js` is directly involved with toggling the menu on and off?
-8. Write a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display itself when clicked, and does it hide when clicked again?
-    * Think about how you wrote the previous test. What is different this time around?
-    * Which clickable element are you checking for?
-    * How do you "simulate" a mouse click that element without actually clicking it?
-9. Write a test suite named `"Initial Entries"`
-    * What are you `describe`-ing in this test suite?
-10. Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container
-    * How does Jasmine's `beforeEach()`function work?
-    * How does the `loadFeed()` function in `app.js` work? Is it synchronous or asynchronous?
-11. Write a test suite named `"New Feed Selection"`
-    * What are you `describe`-ing in this test suite?
-12. Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes
-    * How is this test different from the previous test?
+2. Test the menu icon element:
+    * The menu element is hidden by default.
+    * The menu element changes visibility when the menu icon is clicked.
+        * The menu is displayed when clicked.
+        * The menu is hidden when clicked again.
+       
+3. Test the initial entries:
+    * There is a single .entry element within .feed container.
+    * The loadFeed() function is asynchronous and requires the use of Jasmine's beforeEach and asynchronous done() function.
+    
+4. Test the new feed loaded:
+    * When a new feed is loaded by the loadFeed function that the content actually changes.
+    
 
 ## Contributing
 
