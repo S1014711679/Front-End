@@ -73,12 +73,14 @@ $(function() {
         //     done();
         // });
 
-
+        // ??? Error 
         it('>> menu hidden ', function() {
-
-            expect($('#main')).toHaveClass('menu-hidden');
-
+            expect($('body')).toHaveClass('menu-hidden');
         });
+        
+        
+        
+        
         // }
         //showing - when the menu doesn't had menu-hidden class
         // else {
@@ -95,10 +97,13 @@ $(function() {
          * clicked and does it hide when clicked again.
          */
 
-        it('>> menu showing', function() {
-
-        });
-
+    
+       //it('>> menu showing ', function() {
+         //   expect($('body')).toHaveClass('menu-hidden');
+        //});
+        
+        
+        
     });
 
 
