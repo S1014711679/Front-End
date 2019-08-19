@@ -7,16 +7,36 @@
 - [Dependencies](#Dependencies)
 
 ## Descciption
+This testing project is mainly based on Jasmine JavaScript library. 
+The test suits include:
+1. Test the RSS feeds definitions and the allFeeds variables
+* 
 
-The movements of the character is controlled by the arrows (up,down,left,right). The character must avoid collision with sprites from the second row to the forth row. And the character can't stay in the water-block for over 3 minutes. Otherwise, the location will be reset to the original location.
-
-I used ES5 "class" style for the [app.js](https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%203%20-%20%20Arcade%20Game%20Master/js/app.js) and used ES6 Class for [app_class.js](https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%203%20-%20%20Arcade%20Game%20Master/js/app_class.js). Both files have the same functions. We can make changes in index.html file to check out.
-
-#### This game can be extended with more functions to become more interesting. I will follow up and working on it as I learn more things and apply new knowledge to it :)!
+    
+5. Write a test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty
+    * Think about how you wrote the previous test. What are you testing for this time?
+6. Write a new test suite named `"The menu"`
+    * What are you `describe`-ing in this test suite?
+7. Write a test that ensures the menu element is hidden by default
+    * You'll have to analyze the HTML and the CSS to determine how the hiding/showing of the menu element is implemented
+    * What code in `app.js` is directly involved with toggling the menu on and off?
+8. Write a test that ensures the menu changes visibility when the menu icon is clicked. This test should have two expectations: does the menu display itself when clicked, and does it hide when clicked again?
+    * Think about how you wrote the previous test. What is different this time around?
+    * Which clickable element are you checking for?
+    * How do you "simulate" a mouse click that element without actually clicking it?
+9. Write a test suite named `"Initial Entries"`
+    * What are you `describe`-ing in this test suite?
+10. Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container
+    * How does Jasmine's `beforeEach()`function work?
+    * How does the `loadFeed()` function in `app.js` work? Is it synchronous or asynchronous?
+11. Write a test suite named `"New Feed Selection"`
+    * What are you `describe`-ing in this test suite?
+12. Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes
+    * How is this test different from the previous test?
 
 ## Contributing
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 ##  Dependencies
-1. Jasmine [https://jasmine.github.io/]
+1. Jasmine - Behavior-Driven JavaScript [https://jasmine.github.io/]
