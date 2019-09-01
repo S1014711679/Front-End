@@ -1,0 +1,139 @@
+/*mobile size*/
+
+
+/*  common settings */
+
+* {
+    box-sizing: border-box;
+    font-size: 10pt;
+}
+
+body,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#logo_udacity {
+    padding: 1em;
+    float: left;
+    height: 45px;
+}
+
+#row_header {
+    display: inline-block;
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    order: 1;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    order: 1;
+    /* border: solid 1px blue; */
+}
+
+#col_header_2 {
+    top: 30%;
+    color: #02B3E4;
+}
+
+#content_row {
+    border-top: black solid 1px;
+}
+
+.container_right article {
+    display: block;
+    text-align: left;
+}
+
+#uni{
+	text-align:center;
+}
+
+
+
+.my_uni {
+    width: 250px;
+}
+
+.my_uni img {
+    height: 60px;
+}
+
+.my_logo {
+    text-align: left;
+}
+
+#row_footer {
+    text-align: center;
+    /* border: solid 3px beige; */
+}
+
+footer {
+    display: inline-block;
+    list-style-type: none;
+    border-top: black solid 1px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    flex: 1 1 auto;
+    padding-bottom: 20px;
+    order: 3;
+}
+
+
+/* mobile size: Google Nexus 5 */
+
+@media screen and (min-width: 359px) and (max-width: 767px) {
+    #row_header {
+        height: 50px;
+    }
+    #row_header header {
+        font-size: 15px;
+    }
+    #logo_udacity {
+        height: 50px;
+    }
+}
+
+
+/* tablet size: Apple iPad  */
+
+@media screen and (min-width: 768px) {
+    #row_header {
+        height: 65px;
+    }
+    #row_header header {
+        font-size: 18px;
+    }
+    #logo_udacity {
+        height: 65px;
+    }
+    .my_uni img {
+        height: 72px;
+    }
+}
+
+
+/* desktop size: max-size:1000px */
+
+@media screen and (min-width: 1000px) {
+    #row_header {
+        height: 80px;
+    }
+    #row_header header {
+        font-size: 24px;
+    }
+    #logo_udacity {
+        height: 80px;
+    }
+}
+
+
+/* the whole page  */
