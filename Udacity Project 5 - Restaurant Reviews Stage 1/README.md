@@ -31,5 +31,6 @@ This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://w
 ### How to make it work
 1) Launch a local client sever using Python 3 from your terminal and type:
    python -m http.server 2222 
-2) Launch the Chrome browser and type in localhost:2222[localhost:2222] in the url address
+2) Launch the Chrome browser and type in url address: http://locahost:2222
+* The port number(2222) can be changed in the /js/dehelper.js file
 
