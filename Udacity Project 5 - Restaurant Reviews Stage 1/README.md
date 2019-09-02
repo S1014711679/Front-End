@@ -3,12 +3,12 @@
 #### 
 
 ## Table of Contents
-- [Project Overview] (#Project_Overview)
+- [Project_Overview] (#Project_Overview)
 - [Description](#Description)
-- [How to make it work](#How_to_make_it_work)
+- [How_to_make_it_work](#How_to_make_it_work)
 - [Dependencies](#Dependencies)
 
-### Project Overview
+### Project_Overview
 
 This is a project completed by adding accessibility and converting it to responsive desgin on different-sized displays. A service worker is added to create a seamless offline exprience for the users.
 *  The original project is from [mws-restaurant-stage-1](https://github.com/udacity/mws-restaurant-stage-1);
@@ -18,7 +18,7 @@ This app will display several recommend restaurants in New York city based on th
 
 This app can work offline thanks to the help of service worker technique. The service worker will cache the information when loading the data at the first time and can still display information if response is cached when changing pages.
 
-### How to make it work
+### How_to_make_it_work
 1) Launch a local client sever using Python 3 from your terminal and type:
    `python -m http.server 2222`  to start the server.
 2) Launch the Chrome browser and type in url address: `http://locahost:2222`
