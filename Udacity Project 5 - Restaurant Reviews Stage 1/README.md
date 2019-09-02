@@ -3,7 +3,7 @@
 #### 
 
 ## Table of Contents
-- [Project_Overview] (#Project_Overview)
+- [Project_Overview](#Project_Overview)
 - [Description](#Description)
 - [How_to_make_it_work](#How_to_make_it_work)
 - [Dependencies](#Dependencies)
