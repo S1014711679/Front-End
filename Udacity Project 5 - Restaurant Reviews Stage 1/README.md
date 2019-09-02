@@ -8,7 +8,7 @@ This is a project completed by adding accessibility and converting it to respons
 *  (The original project is from https://github.com/udacity/mws-restaurant-stage-1)
 
 ### Description
-
+This app will display several recommend restaurants in New York city based on the [dataset](https://github.com/S1014711679/Front-End/blob/master/Udacity%20Project%205%20-%20Restaurant%20Reviews%20Stage%201/data/restaurants.json). Users can select "Neighbourhood" or "Cuisines" to find out the restaurants they want to go to. And they can view more detailed information including reviews, address and opening time after getting the filtered results. 
 
 
 ### How to make it work
