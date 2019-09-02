@@ -2,7 +2,13 @@
 -------------------
 #### 
 
-## Project Overview
+## Table of Contents
+- [Project Overview] (#Project_Overview)
+- [Description](#Description)
+- [How to make it work](#How_to_make_it_work)
+- [Dependencies](#Dependencies)
+
+### Project Overview
 
 This is a project completed by adding accessibility and converting it to responsive desgin on different-sized displays. A service worker is added to create a seamless offline exprience for the users.
 *  The original project is from [mws-restaurant-stage-1](https://github.com/udacity/mws-restaurant-stage-1);
