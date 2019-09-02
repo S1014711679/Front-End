@@ -1,10 +1,11 @@
-# Mobile Web Specialist Certification Course
+# Restaurant Review: Stage 1
 ---
-#### _Three Stage Course Material Project - Restaurant Reviews_
+#### 
 
-## Project Overview: Stage 1
+## Project Overview
 
-For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
+This is a project completed by adding assibility and converting it to responsive desgin on different-sized displays. A service worker is added to create a seamless offline exprience for the users.
+*  (The original project is from https://github.com/udacity/mws-restaurant-stage-1)
 
 ### Specification
 
