@@ -1,200 +1,87 @@
-let restaurant;
-var newMap;
+<!DOCTYPE html>
+<html>
 
-/**
- * Initialize map as soon as the page is loaded.
- */
-document.addEventListener('DOMContentLoaded', (event) => {
-    initMap();
-});
+<head>
+    <!-- responsivee -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Normalize.css for better cross-browser consistency -->
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <title>Restaurant Info</title>
+</head>
 
-/**
- * Initialize leaflet map
- */
-initMap = () => {
-    fetchRestaurantFromURL((error, restaurant) => {
-        if (error) { // Got an error!
-            console.error(error);
-        } else {
-            self.newMap = L.map('map', {
-                center: [restaurant.latlng.lat, restaurant.latlng.lng],
-                zoom: 16,
-                scrollWheelZoom: false
-            });
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
+<body class="inside">
+    <!-- Beginning header -->
+    <header>
+        <!-- Beginning nav -->
+        <nav>
+            <h1><a href="/">Restaurant Reviews</a></h1>
 
-                // mapboxToken: '<your MAPBOX API KEY HERE>',
-                mapboxToken: 'pk.eyJ1IjoiY3hqb2UiLCJhIjoiY2p6dmgzYWR4MGRtNjNicDB1Yzh0bHBrYSJ9.aos_rAa_v006OUx0QYUtbQ',
-                maxZoom: 18,
-                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                id: 'mapbox.streets'
-            }).addTo(newMap);
-            fillBreadcrumb();
-            DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
-        }
-    });
-}
+            <!-- Beginning breadcrumb -->
+            <ul id="breadcrumb" aria-label="Breadcrumb">
+                <li><a href="/">Home</a></li>
+            </ul>
+            <!-- End breadcrumb -->
+        </nav>
+        <!-- End nav -->
+    </header>
+    <!-- End header -->
 
-/* window.initMap = () => {
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      self.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: restaurant.latlng,
-        scrollwheel: false
-      });
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-    }
-  });
-} */
+    <!-- Beginning main -->
+    <div id="maincontent">
 
-/**
- * Get current restaurant from page URL.
- */
-fetchRestaurantFromURL = (callback) => {
-    if (self.restaurant) { // restaurant already fetched!
-        callback(null, self.restaurant)
-        return;
-    }
-    const id = getParameterByName('id');
-    if (!id) { // no id found in URL
-        error = 'No restaurant id in URL'
-        callback(error, null);
-    } else {
-        DBHelper.fetchRestaurantById(id, (error, restaurant) => {
-            self.restaurant = restaurant;
-            if (!restaurant) {
-                console.error(error);
-                return;
-            }
-            fillRestaurantHTML();
-            callback(null, restaurant)
-        });
-    }
-}
+        <!-- Beginning map-->
+        <div id="map-container" aria-label="Map of Restaurants" role="application">
+            <div id="map"></div>
+        </div>
+        <!-- End map -->
 
-/**
- * Create restaurant HTML and add it to the webpage
- */
-fillRestaurantHTML = (restaurant = self.restaurant) => {
-    const name = document.getElementById('restaurant-name');
-    name.innerHTML = restaurant.name;
+        <div id="info">
+            <!-- Beginning restaurant -->
+            <div id="restaurant-container" aria-label=" Restaurant Information" tabindex="0">
+                <!-- restaurnt name -->
+                <h2 id="restaurant-name" tabindex="0"></h2>
+                <img id="restaurant-img" tabindex="0">
+                <p id="restaurant-cuisine" tabindex="0"></p>
+                <p id="restaurant-address" tabindex="0"></p>
+                <table id="restaurant-hours" tabindex="0"></table>
+            </div>
+            <!-- end restaurant -->
 
-    const address = document.getElementById('restaurant-address');
-    address.innerHTML = restaurant.address;
 
-    const image = document.getElementById('restaurant-img');
-    image.className = 'restaurant-img'
-    image.src = DBHelper.imageUrlForRestaurant(restaurant);
-    //add laternate text for <img>
-    image.alt = restaurant.name + 'Restaurant';
+            <!-- Beginning reviews -->
+            <div id="reviews-container">
+                <ul id="reviews-list" tabindex="0"></ul>
+            </div>
+            <!-- End reviews -->
 
-    console.log("image object" + image);
+        </div>
+        <!-- End of Info -->
 
-    const cuisine = document.getElementById('restaurant-cuisine');
-    cuisine.innerHTML = restaurant.cuisine_type;
+    </div>
+    <!-- End main -->
 
-    // fill operating hours
-    if (restaurant.operating_hours) {
-        fillRestaurantHoursHTML();
-    }
-    // fill reviews
-    fillReviewsHTML();
-}
+    <!-- Beginning footer -->
+    <footer id="footer">
+        Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    </footer>
+    <!-- End footer -->
 
-/**
- * Create restaurant operating hours HTML table and add it to the webpage.
- */
-fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
-    const hours = document.getElementById('restaurant-hours');
-    for (let key in operatingHours) {
-        const row = document.createElement('tr');
 
-        const day = document.createElement('td');
-        day.innerHTML = key;
-        row.appendChild(day);
+    <!-- Beginning scripts -->
+    <!-- Database helpers -->
+    <script type="text/javascript" src="js/dbhelper.js"></script>
+    <!-- Main javascript file -->
+    <script type="text/javascript" src="js/restaurant_info.js"></script>
+    <!--  Map -->
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <!-- Service Worker -->
+    <script type="application/javascript" src="js/register_sw.js"></script>
 
-        const time = document.createElement('td');
-        time.innerHTML = operatingHours[key];
-        row.appendChild(time);
+    <!-- Google Maps -->
+    <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
+    <!-- End scripts -->
 
-        hours.appendChild(row);
-    }
-}
-
-/**
- * Create all reviews HTML and add them to the webpage.
- */
-fillReviewsHTML = (reviews = self.restaurant.reviews) => {
-    const container = document.getElementById('reviews-container');
-    const title = document.createElement('h2');
-    title.innerHTML = 'Reviews';
-    container.appendChild(title);
-
-    if (!reviews) {
-        const noReviews = document.createElement('p');
-        noReviews.innerHTML = 'No reviews yet!';
-        container.appendChild(noReviews);
-        return;
-    }
-    const ul = document.getElementById('reviews-list');
-    reviews.forEach(review => {
-        ul.appendChild(createReviewHTML(review));
-    });
-    container.appendChild(ul);
-}
-
-/**
- * Create review HTML and add it to the webpage.
- */
-createReviewHTML = (review) => {
-    const li = document.createElement('li');
-    const name = document.createElement('p');
-    name.innerHTML = review.name;
-    li.appendChild(name);
-
-    const date = document.createElement('p');
-    date.innerHTML = review.date;
-    li.appendChild(date);
-
-    const rating = document.createElement('p');
-    rating.innerHTML = `Rating: ${review.rating}`;
-    li.appendChild(rating);
-
-    const comments = document.createElement('p');
-    comments.innerHTML = review.comments;
-    li.appendChild(comments);
-
-    return li;
-}
-
-/**
- * Add restaurant name to the breadcrumb navigation menu
- */
-fillBreadcrumb = (restaurant = self.restaurant) => {
-    const breadcrumb = document.getElementById('breadcrumb');
-    const li = document.createElement('li');
-    li.innerHTML = restaurant.name;
-    breadcrumb.appendChild(li);
-}
-
-/**
- * Get a parameter by name from page URL.
- */
-getParameterByName = (name, url) => {
-    if (!url)
-        url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`),
-        results = regex.exec(url);
-    if (!results)
-        return null;
-    if (!results[2])
-        return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+</body>
