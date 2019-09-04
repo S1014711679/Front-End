@@ -65,7 +65,7 @@ section {
     display: block;
 }
 
-#maincontent {
+#main_content {
     background-color: #f3f3f3;
     min-height: 100%;
     width: 100%;
@@ -267,10 +267,6 @@ nav h1 a {
     width: auto;
 }
 
-#maincontent {
-    width: 100%;
-}
-
 #restaurant-name {
     color: #f18200;
     font-family: Arial, sans-serif;
@@ -395,9 +391,16 @@ nav h1 a {
 * for the restaurant_info.html  move the map to the top
 */
 
-@media (min-width: 360px) {
+@media (min-width: 200px) {
     #restaurants-list li {
         width: 100%;
+    }
+    /* main content */
+    #neighborhoods-select {
+        width: 165px;
+    }
+    #cuisines-select {
+        width: 130px;
     }
     /* restaruant.html */
     /* overall layout controlled by order */
@@ -405,34 +408,38 @@ nav h1 a {
         display: flex;
         flex-direction: column;
     }
-    /* header */
-    .inside header {
-        order: 0;
+    nav {
+        height: 50%;
+    }
+    #header_content {
+        order: -1;
+    }
+    #header_content h1 {
+        padding: 0;
+        margin: 0;
+        justify-content: left;
+        align-items: left;
     }
     #breadcrumb {
         width: 100%;
+        text-align: left;
+        padding: 0px 1em 0px 1em;
     }
-    /* main content */
-    #neighborhoods-select {
-        width: 175px;
-    }
-    #cuisines-select {
-        width: 140px;
+    #main_content {
+        order: 1;
     }
     /* 1) map container */
     .inside #map-container {
-        width: 100%;
         height: 200px;
-        order: 2;
     }
     /* 2) restaurant container */
     #restaurant-container {
         width: 100%;
         justify-content: center;
         align-items: center;
-        padding: 5px 10px;
+        padding: 5px 5px;
         margin: auto;
-        order: 3;
+        order: 8;
     }
     #restaurant-container img {
         width: 100%;
@@ -469,6 +476,10 @@ nav h1 a {
     /* 1) map container */
     .inside #map-container {
         height: 300px;
+    }
+    #header_content h1 {
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 }
 
